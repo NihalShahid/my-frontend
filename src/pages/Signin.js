@@ -17,12 +17,14 @@ export default function Signin() {
     }
   };
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>Sign In (v2)</h2>
-      {error && <p style={{ color: "red" }}>{error}</p>}
-      <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-      <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required />
-      <button type="submit">Sign In</button>
-    </form>
+    <div className="auth-container">
+      <form className="auth-form" onSubmit={handleSubmit}>
+        <h2>Sign In</h2>
+        {error && <p className="auth-error">{error}</p>}
+        <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+        <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+        <button type="submit">Sign In</button>
+      </form>
+    </div>
   );
 }
