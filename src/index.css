@@ -71,3 +71,24 @@ body {
   margin-bottom: 14px;
   text-align: center;
 }
+.auth-link {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 13px;
+}
+
+.auth-link a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.auth-link a:hover {
+  text-decoration: underline;
+}
+
+.auth-success {
+  text-align: center;
+  color: #16a34a;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
