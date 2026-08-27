@@ -6,7 +6,25 @@ on:
       - main
 
 jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate code (lint check)
+        run: npx eslint src --max-warnings=9999
+
   deploy:
+    needs: validate
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -24,3 +42,4 @@ jobs:
             git pull origin main
             npm ci
             npm run build
+            sudo systemctl reload nginx
