@@ -22,6 +22,7 @@ export default function Signin() {
   return (
     <div className="auth-container">
       <form className="auth-form" onSubmit={handleSubmit}>
+        <p className="auth-welcome">Welcome Back!</p>
         <h2>Sign In</h2>
         {error && <p className="auth-error">{error}</p>}
         <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
